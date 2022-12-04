@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/url_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:background="@drawable/rounded_corner"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/link_icon"
+            android:src="@drawable/ic_round_link_24"
+            android:layout_centerVertical="true"/>
+
+        <EditText
+            android:id="@+id/url_search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_toStartOf="@+id/cancel_icon"
+            android:layout_toEndOf="@+id/link_icon"
+            android:background="@null"
+            android:hint="Search or Enter URL"
+            android:imeOptions="actionGo"
+            android:inputType="textUri"
+            android:singleLine="true"
+            android:textSize="14sp" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancel_icon"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_round_cancel_24"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/url_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/url_relative_layout"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/url_relative_layout"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:visibility="invisible"/>
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/nav_divider"
+        android:layout_below="@id/url_divider" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/nav_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_layout"/>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="?attr/colorSurface"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/web_home"
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_round_home_24"
+            android:layout_weight="1"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/web_back"
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_round_arrow_back_ios_24"
+            android:layout_weight="1"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/web_forward"
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_round_arrow_forward_ios_24"
+            android:layout_weight="1"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/web_refresh"
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_round_refresh_24"
+            android:layout_weight="1"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/web_share"
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_round_share_24"
+            android:layout_weight="1"
+            android:padding="8dp"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
